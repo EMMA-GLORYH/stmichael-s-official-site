@@ -2,6 +2,7 @@
 
 import Hero from '@/components/home/Hero';
 import Stats from '@/components/home/Stats';
+import Features from '@/components/home/Features';
 import Programs from '@/components/home/Programs';
 import Announcements from '@/components/home/Announcements';
 import CallToAction from '@/components/home/CallToAction';
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <Features />
       <Programs />
       <Announcements />
       <CallToAction />
