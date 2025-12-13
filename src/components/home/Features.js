@@ -1,6 +1,6 @@
 // src/components/home/Features.js
 
-import { Shield, Heart, Lightbulb, Users, Award, Globe } from 'lucide-react';
+import { Shield, Heart, Lightbulb, Users, Award, Globe, Calendar, ArrowRight } from 'lucide-react';
 
 export default function Features() {
   const features = [
@@ -111,15 +111,16 @@ export default function Features() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-primary-50 to-purple-50 px-8 py-6 rounded-2xl border-2 border-primary-100">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🎯</span>
+                <Calendar className="w-6 h-6 text-white" />
               </div>
               <span className="text-gray-700 font-semibold">Ready to experience the difference?</span>
             </div>
             <a 
               href="/contact" 
-              className="px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
             >
               Schedule a Tour
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>

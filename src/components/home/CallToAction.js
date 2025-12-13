@@ -72,7 +72,7 @@ export default function CallToAction() {
             <h3 className="text-lg font-bold mb-2">Call Us</h3>
             <p className="text-blue-100 text-sm mb-2">Monday - Friday, 8AM - 5PM</p>
             <a href="tel:+233XXXXXXXXX" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-              +233-XXX-XXX-XXX
+              +233-557-881-454
             </a>
           </div>
 
@@ -84,7 +84,7 @@ export default function CallToAction() {
             <h3 className="text-lg font-bold mb-2">Email Us</h3>
             <p className="text-blue-100 text-sm mb-2">Get a response within 24 hours</p>
             <a href="mailto:info@yourschool.com" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-              info@yourschool.com
+              stmichaelschool@gmail.com
             </a>
           </div>
 

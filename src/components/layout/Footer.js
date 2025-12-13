@@ -14,10 +14,9 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center gap-3 mb-4">
                             <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                S
                             </div>
                             <div>
-                                <div className="font-bold text-lg text-white">Your School Name</div>
+                                <div className="font-bold text-lg text-white">St. Michael's School</div>
                                 <div className="text-xs">Excellence in Education</div>
                             </div>
                         </div>
@@ -72,15 +71,15 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start gap-2">
                                 <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
-                                <span>Your School Address<br />Accra, Ghana</span>
+                                <span>St. Michael's School<br />Akim Oda, Asawase, Ghana</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Phone className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                                <span>+233-XXX-XXX-XXX</span>
+                                <span>+233-552-735-903</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                                <span>info@yourschool.com</span>
+                                <span>stmichaelschool23@gmail.com</span>
                             </li>
                         </ul>
                         <div className="mt-4">
@@ -97,7 +96,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
                     <p>
-                        © {currentYear} Your School Name. All rights reserved.
+                        © {currentYear} St.Michael's School. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         <Link href="#" className="hover:text-primary-400 transition-colors">Privacy Policy</Link>

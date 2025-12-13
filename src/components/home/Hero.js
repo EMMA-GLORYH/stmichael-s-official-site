@@ -1,6 +1,7 @@
 // src/components/home/Hero.js
 
 import Button from '@/components/ui/Button';
+import Image from 'next/image';
 import { Sparkles, Award, Users, TrendingUp } from 'lucide-react';
 
 export default function Hero() {
@@ -102,17 +103,15 @@ export default function Hero() {
           {/* Right Content - Enhanced Image Area */}
           <div className="relative">
             <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20">
-              {/* Placeholder for school image */}
-              <div className="aspect-square bg-gradient-to-br from-yellow-300 via-orange-400 to-pink-500 rounded-xl flex items-center justify-center shadow-2xl">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-xl">
-                    <span className="text-6xl">🏫</span>
-                  </div>
-                  <p className="text-white font-bold text-lg drop-shadow-lg">
-                    Add your school photo to<br />
-                    <span className="text-sm">public/images/hero/school.jpg</span>
-                  </p>
-                </div>
+              {/* School Image */}
+              <div className="aspect-square rounded-xl overflow-hidden shadow-2xl relative">
+                <Image
+                  src="/images/hero/school.jpg"
+                  alt="School Campus"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
 
               {/* Floating Achievement Cards */}

@@ -1,6 +1,6 @@
 // src/components/home/Stats.js
 
-import { Trophy, GraduationCap, Users, TrendingUp } from 'lucide-react';
+import { Trophy, GraduationCap, Users, TrendingUp, Award, CheckCircle, Handshake } from 'lucide-react';
 
 export default function Stats() {
   const stats = [
@@ -95,7 +95,7 @@ export default function Stats() {
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="flex items-center gap-3 text-gray-600">
               <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">🏆</span>
+                <Award className="w-6 h-6 text-primary-600" />
               </div>
               <div className="text-left">
                 <div className="font-bold text-sm text-gray-900">Award Winning</div>
@@ -105,7 +105,7 @@ export default function Stats() {
 
             <div className="flex items-center gap-3 text-gray-600">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">✓</span>
+                <CheckCircle className="w-6 h-6 text-green-600" />
               </div>
               <div className="text-left">
                 <div className="font-bold text-sm text-gray-900">Certified Programs</div>
@@ -115,7 +115,7 @@ export default function Stats() {
 
             <div className="flex items-center gap-3 text-gray-600">
               <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">🤝</span>
+                <Handshake className="w-6 h-6 text-yellow-600" />
               </div>
               <div className="text-left">
                 <div className="font-bold text-sm text-gray-900">NGO Partnership</div>
