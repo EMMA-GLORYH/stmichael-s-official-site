@@ -106,7 +106,7 @@ export default function Hero() {
               {/* School Image */}
               <div className="aspect-square rounded-xl overflow-hidden shadow-2xl relative">
                 <Image
-                  src="/images/hero/school.jpg"
+                  src="/images/hero/Untitled.jpg"
                   alt="School Campus"
                   fill
                   className="object-cover"
