@@ -54,7 +54,7 @@ export default function ContactPage() {
             <h3 className="font-semibold text-gray-900 mb-2">Visit Us</h3>
             <p className="text-gray-600 text-sm">
               Ashongman Estate<br />
-              Accra, Ghana
+              Akim Oda,Asawase, Ghana
             </p>
           </div>
 

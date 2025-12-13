@@ -102,9 +102,9 @@ export default function Hero() {
 
           {/* Right Content - Enhanced Image Area */}
           <div className="relative">
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20">
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-full p-8 shadow-2xl border border-white/20">
               {/* School Image */}
-              <div className="aspect-square rounded-xl overflow-hidden shadow-2xl relative">
+              <div className="aspect-square rounded-full overflow-hidden shadow-2xl relative">
                 <Image
                   src="/images/hero/Untitled.jpg"
                   alt="School Campus"
