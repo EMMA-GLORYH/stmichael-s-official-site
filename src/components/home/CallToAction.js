@@ -1,7 +1,7 @@
 // src/components/home/CallToAction.js
 
 import Button from '@/components/ui/Button';
-import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, GraduationCap, CheckCircle } from 'lucide-react';
 
 export default function CallToAction() {
   return (
@@ -22,7 +22,7 @@ export default function CallToAction() {
         {/* Main CTA Content */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold mb-6 border border-white/20">
-            <span className="text-2xl">🎓</span>
+            <span className="text-2xl"></span>
             <span>Start Your Journey Today</span>
           </div>
 
@@ -72,7 +72,7 @@ export default function CallToAction() {
             <h3 className="text-lg font-bold mb-2">Call Us</h3>
             <p className="text-blue-100 text-sm mb-2">Monday - Friday, 8AM - 5PM</p>
             <a href="tel:+233XXXXXXXXX" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-              +233-557-881-454
+              +233-552-735-903
             </a>
           </div>
 
@@ -84,7 +84,7 @@ export default function CallToAction() {
             <h3 className="text-lg font-bold mb-2">Email Us</h3>
             <p className="text-blue-100 text-sm mb-2">Get a response within 24 hours</p>
             <a href="mailto:info@yourschool.com" className="text-yellow-300 font-semibold hover:text-yellow-200 transition-colors">
-              stmichaelschool@gmail.com
+              stmichaelschool23@gmail.com
             </a>
           </div>
 
@@ -96,7 +96,7 @@ export default function CallToAction() {
             <h3 className="text-lg font-bold mb-2">Visit Us</h3>
             <p className="text-blue-100 text-sm mb-2">Come see our facilities</p>
             <p className="text-yellow-300 font-semibold">
-              Accra, Ghana
+              Akim Oda, Asawase
             </p>
           </div>
 

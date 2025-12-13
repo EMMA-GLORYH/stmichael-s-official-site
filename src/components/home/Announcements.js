@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { announcements } from '@/lib/data/programs';
-import { Calendar, ArrowRight, Bell, Star, TrendingUp } from 'lucide-react';
+import { Calendar, ArrowRight, Bell, Star, TrendingUp, Mail, Users } from 'lucide-react';
 import { format } from 'date-fns';
 
 const categoryIcons = {
@@ -133,8 +133,13 @@ export default function Announcements() {
 
             <div className="hidden md:block">
               <div className="bg-gradient-to-br from-primary-100 to-purple-100 rounded-xl p-8 text-center">
-                <div className="text-6xl mb-4">📬</div>
-                <div className="text-gray-700 font-semibold mb-2">Join 500+ Parents</div>
+                <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <Mail className="w-10 h-10 text-primary-600" />
+                </div>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Users className="w-5 h-5 text-primary-600" />
+                  <div className="text-gray-900 font-bold text-lg">Join 500+ Parents</div>
+                </div>
                 <div className="text-sm text-gray-600">Who receive our weekly updates</div>
               </div>
             </div>
