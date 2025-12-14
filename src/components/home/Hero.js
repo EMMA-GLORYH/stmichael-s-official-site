@@ -65,7 +65,7 @@ export default function Hero() {
                   <Users className="w-5 h-5 text-primary-900" />
                 </div>
                 <div className="text-left">
-                  <div className="font-bold text-sm">Hello</div>
+                  <div className="font-bold text-sm">Cultural</div>
                   <div className="text-xs text-blue-200">Excellence</div>
                 </div>
               </div>
