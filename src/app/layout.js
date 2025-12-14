@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Your School Name - Excellence in Education",
+  title: "St.Michael's - Excellence in Education",
   description:
     "Quality education from Creche to Junior High School with UCMAS, Coding, and Cultural Programs",
 };
