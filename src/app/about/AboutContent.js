@@ -247,8 +247,9 @@ export default function AboutContent() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                 <p className="text-gray-700 leading-relaxed line-clamp-3">
-                  To provide quality, holistic education that nurtures academic excellence, 
-                  character development, and practical skills...
+                  Our mission is to provide each student christ centered education, to promote self discipline, 
+                  motivation and excellence in learning to make them acceptable in the society and nation
+
                 </p>
                 <div className="flex items-center gap-2 text-primary-600 font-semibold mt-4 group-hover:gap-3 transition-all">
                   <span>Read Full Mission</span>
@@ -269,8 +270,8 @@ export default function AboutContent() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-gray-700 leading-relaxed line-clamp-3">
-                  To be the leading educational institution recognized for excellence in 
-                  academics, innovation in teaching...
+                  St.Michael's will provide the highest quality education for pupils 
+                  and help them become faithful servants of our Lord Jesus Christ
                 </p>
                 <div className="flex items-center gap-2 text-purple-600 font-semibold mt-4 group-hover:gap-3 transition-all">
                   <span>Read Full Vision</span>
@@ -576,9 +577,8 @@ export default function AboutContent() {
             
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                To provide quality, holistic education that nurtures academic excellence, 
-                character development, and practical skills, preparing students to become 
-                responsible citizens and future leaders who contribute positively to society.
+                Our mission is to provide each student christ - centered education, to promote self discipline,
+                motivation and excellence in learning to make them acceptable in the society and the nation.
               </p>
 
               <div className="bg-primary-50 p-6 rounded-xl">
@@ -624,9 +624,8 @@ export default function AboutContent() {
             
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                To be the leading educational institution recognized for excellence in 
-                academics, innovation in teaching, and holistic student development, 
-                setting the standard for quality education in Ghana and beyond.
+                St.Michael's will provide the highest quality education for pupils and help them
+                become faithful servants of our Lord Jesus Christ
               </p>
 
               <div className="bg-purple-50 p-6 rounded-xl">

@@ -35,9 +35,9 @@ export const currentLeadership = [
   },
   {
     id: 3,
-    name: 'Mr. Emmanuel Adu',
+    name: 'Mr. Patrick Ntsiful',
     position: 'Assistant Headmaster',
-    tenure: '2019 - Present',
+    tenure: '2025 - Present',
     image: '/images/leadership/current/assistant-head.jpg',
     bio: 'Coordinates academic activities and student welfare programs, ensuring quality education delivery.',
     achievements: [
