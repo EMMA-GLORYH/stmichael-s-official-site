@@ -51,18 +51,34 @@ export const currentLeadership = [
   },
   {
     id: 4,
-    name: 'Mrs. Abena Mensah',
-    position: 'Head of Special Programs',
-    tenure: '2020 - Present',
+    name: 'Elijah Emmanuel Hienwo',
+    position: 'Head of Typing and Coding',
+    tenure: '2021 - Present',
     image: '/images/leadership/current/special-programs.jpg',
-    bio: 'Leads UCMAS, Coding, and Cultural programs, bringing innovation to our curriculum.',
+    bio: 'Leads Coding, and Typing, bringing innovation to our curriculum.',
     achievements: [
-      'Launched successful UCMAS certification program',
-      'Established school coding club with 100+ students',
-      'Organized cultural dance competitions',
+      'Facilitates and guide learners to be quick in typing',
+      'Established school coding club with 10+ students',
+      'Organized competition among students to expose them to how competition is',
       'Partnered with tech companies for student training'
     ],
-    email: 'programs@stmichaelschool.com',
+    email: 'emmanuelhienwo@gmail.com',
+    status: 'current'
+  },
+
+    {
+    id: 5,
+    name: 'James Mckeown',
+    position: 'Head of Dance and Drama',
+    tenure: '2020 - Present',
+    image: '/images/leadership/current/special-programs.jpg',
+    bio: 'Leads Cultural programs, bringing innovation to our curriculum.',
+    achievements: [
+      'Facilitates and guide learners to be creative',
+      'Established school cultural activities',
+      'Partnered with cultural houses'
+    ],
+    email: 'james123@gmail.com',
     status: 'current'
   },
   // ← ADD MORE CURRENT LEADERS HERE (copy the block above and change details)
