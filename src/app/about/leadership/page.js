@@ -1,17 +1,28 @@
 // src/app/about/leadership/page.js
+'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import PageHeader from '@/components/shared/PageHeader';
 import Card from '@/components/ui/Card';
+import Modal from '@/components/ui/Modal';
 import { currentLeadership, pastLeadership } from '@/lib/data/leadership';
-import { Crown, Mail, Phone, CheckCircle, Star, Award, Users, History } from 'lucide-react';
-
-export const metadata = {
-  title: 'Our Leadership - St. Michael\'s School',
-  description: 'Meet the dedicated leaders who guide St. Michael\'s School towards excellence in education.',
-};
+import { Crown, Mail, Phone, CheckCircle, Star, Award, Users, History, ExternalLink } from 'lucide-react';
 
 export default function LeadershipPage() {
+  const [selectedLeader, setSelectedLeader] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openLeaderModal = (leader) => {
+    setSelectedLeader(leader);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedLeader(null), 300);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
@@ -22,7 +33,7 @@ export default function LeadershipPage() {
         icon={Crown}
       />
 
-      {/* Current Leadership - Detailed View */}
+      {/* Current Leadership */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -34,83 +45,40 @@ export default function LeadershipPage() {
               Our Leadership Team
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Meet the experienced professionals guiding our school's mission and vision
+              Click on any leader to learn more about them
             </p>
           </div>
 
-          <div className="space-y-12">
-            {currentLeadership.map((leader, index) => (
-              <Card key={leader.id} hover className="overflow-hidden">
-                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8`}>
-                  {/* Photo */}
-                  <div className="lg:w-1/3">
-                    <div className="relative w-full h-80 bg-gradient-to-br from-primary-100 to-purple-100 rounded-xl overflow-hidden">
-                      <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <Users className="w-32 h-32 text-primary-300 mb-4" />
-                        <p className="text-sm text-primary-600 font-semibold">Photo Coming Soon</p>
-                      </div>
-                      {/* Uncomment when you add actual images */}
-                      {/* <Image
-                        src={leader.image}
-                        alt={leader.name}
-                        fill
-                        className="object-cover"
-                      /> */}
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {currentLeadership.map((leader) => (
+              <Card 
+                key={leader.id} 
+                hover 
+                className="cursor-pointer group"
+                onClick={() => openLeaderModal(leader)}
+              >
+                {/* Photo */}
+                <div className="relative w-full h-48 bg-gradient-to-br from-primary-100 to-purple-100 rounded-xl overflow-hidden mb-4">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Users className="w-16 h-16 text-primary-300" />
                   </div>
+                </div>
 
-                  {/* Content */}
-                  <div className="lg:w-2/3">
-                    <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                        {leader.name}
-                      </h3>
-                      <p className="text-xl text-primary-600 font-semibold mb-2">
-                        {leader.position}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Tenure:</span> {leader.tenure}
-                      </p>
-                    </div>
+                {/* Info */}
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary-600 transition-colors">
+                  {leader.name}
+                </h3>
+                <p className="text-primary-600 font-semibold text-sm mb-2">
+                  {leader.position}
+                </p>
+                <p className="text-xs text-gray-500 mb-4">
+                  {leader.tenure}
+                </p>
 
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      {leader.bio}
-                    </p>
-
-                    {/* Achievements */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Award className="w-5 h-5 text-primary-600" />
-                        Key Achievements
-                      </h4>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {leader.achievements.map((achievement, idx) => (
-                          <div key={idx} className="flex items-start gap-2">
-                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-gray-700">{achievement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Contact Info */}
-                    <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-200">
-                      <a 
-                        href={`mailto:${leader.email}`}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-                      >
-                        <Mail className="w-4 h-4" />
-                        Send Email
-                      </a>
-                      <a 
-                        href="tel:+233552735903"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-                      >
-                        <Phone className="w-4 h-4" />
-                        Call Office
-                      </a>
-                    </div>
-                  </div>
+                {/* View More */}
+                <div className="flex items-center gap-2 text-primary-600 text-sm font-semibold group-hover:gap-3 transition-all">
+                  <span>View Profile</span>
+                  <ExternalLink className="w-4 h-4" />
                 </div>
               </Card>
             ))}
@@ -118,7 +86,7 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* Past Leadership Section */}
+      {/* Past Leadership */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -130,77 +98,40 @@ export default function LeadershipPage() {
               Honoring Our Past Leaders
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The visionaries who laid the foundation for our success
+              Click to learn about their lasting legacy
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastLeadership.map((leader) => (
-              <Card key={leader.id} className="bg-white overflow-hidden">
-                <div className="flex flex-col lg:flex-row gap-8">
-                  {/* Photo */}
-                  <div className="lg:w-1/3">
-                    <div className="relative w-full h-80 bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl overflow-hidden">
-                      <div className="absolute inset-0 flex flex-col items-center justify-center">
-                        <Award className="w-32 h-32 text-purple-300 mb-4" />
-                        <p className="text-sm text-purple-600 font-semibold">Photo Coming Soon</p>
-                      </div>
-                      {/* Uncomment when you add actual images */}
-                      {/* <Image
-                        src={leader.image}
-                        alt={leader.name}
-                        fill
-                        className="object-cover"
-                      /> */}
-                    </div>
+              <Card 
+                key={leader.id} 
+                hover 
+                className="cursor-pointer bg-white group"
+                onClick={() => openLeaderModal(leader)}
+              >
+                {/* Photo */}
+                <div className="relative w-full h-48 bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl overflow-hidden mb-4">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Award className="w-16 h-16 text-purple-300" />
                   </div>
+                </div>
 
-                  {/* Content */}
-                  <div className="lg:w-2/3">
-                    <div className="mb-6">
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                        {leader.name}
-                      </h3>
-                      <p className="text-xl text-purple-600 font-semibold mb-2">
-                        {leader.position}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Served:</span> {leader.tenure}
-                      </p>
-                    </div>
+                {/* Info */}
+                <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                  {leader.name}
+                </h3>
+                <p className="text-purple-600 font-semibold text-sm mb-2">
+                  {leader.position}
+                </p>
+                <p className="text-xs text-gray-500 mb-4">
+                  Served: {leader.tenure}
+                </p>
 
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      {leader.bio}
-                    </p>
-
-                    {/* Contributions */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Star className="w-5 h-5 text-yellow-500" />
-                        Major Contributions
-                      </h4>
-                      <div className="space-y-3">
-                        {leader.contributions.map((contribution, idx) => (
-                          <div key={idx} className="flex items-start gap-3 bg-purple-50 p-3 rounded-lg">
-                            <div className="w-6 h-6 bg-purple-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <span className="text-xs font-bold text-purple-700">{idx + 1}</span>
-                            </div>
-                            <span className="text-sm text-gray-700">{contribution}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Legacy */}
-                    <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl border-l-4 border-purple-600">
-                      <h4 className="text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide">
-                        Lasting Legacy
-                      </h4>
-                      <p className="text-gray-700 italic">
-                        "{leader.legacy}"
-                      </p>
-                    </div>
-                  </div>
+                {/* View More */}
+                <div className="flex items-center gap-2 text-purple-600 text-sm font-semibold group-hover:gap-3 transition-all">
+                  <span>View Legacy</span>
+                  <ExternalLink className="w-4 h-4" />
                 </div>
               </Card>
             ))}
@@ -244,6 +175,113 @@ export default function LeadershipPage() {
           </div>
         </div>
       </section>
+
+      {/* Leader Detail Modal */}
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={closeModal}
+      >
+        {selectedLeader && (
+          <div>
+            <div className="flex flex-col md:flex-row gap-8 mb-8">
+              {/* Photo */}
+              <div className="md:w-1/3">
+                <div className="relative w-full h-80 bg-gradient-to-br from-primary-100 to-purple-100 rounded-xl overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {selectedLeader.status === 'current' ? (
+                      <Users className="w-32 h-32 text-primary-300" />
+                    ) : (
+                      <Award className="w-32 h-32 text-purple-300" />
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Basic Info */}
+              <div className="md:w-2/3">
+                <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                  {selectedLeader.name}
+                </h3>
+                <p className={`text-xl font-semibold mb-2 ${selectedLeader.status === 'current' ? 'text-primary-600' : 'text-purple-600'}`}>
+                  {selectedLeader.position}
+                </p>
+                <p className="text-gray-600 mb-4">
+                  <span className="font-semibold">
+                    {selectedLeader.status === 'current' ? 'Tenure:' : 'Served:'}
+                  </span> {selectedLeader.tenure}
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {selectedLeader.bio}
+                </p>
+              </div>
+            </div>
+
+            {/* Achievements or Contributions */}
+            <div className="mb-8">
+              <h4 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                {selectedLeader.status === 'current' ? (
+                  <>
+                    <Award className="w-6 h-6 text-primary-600" />
+                    Key Achievements
+                  </>
+                ) : (
+                  <>
+                    <Star className="w-6 h-6 text-yellow-500" />
+                    Major Contributions
+                  </>
+                )}
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {(selectedLeader.achievements || selectedLeader.contributions)?.map((item, idx) => (
+                  <div key={idx} className={`flex items-start gap-3 p-4 rounded-lg ${selectedLeader.status === 'current' ? 'bg-green-50' : 'bg-purple-50'}`}>
+                    {selectedLeader.status === 'current' ? (
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <div className="w-6 h-6 bg-purple-200 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-bold text-purple-700">{idx + 1}</span>
+                      </div>
+                    )}
+                    <span className="text-sm text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Legacy (for past leaders) */}
+            {selectedLeader.legacy && (
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-xl border-l-4 border-purple-600 mb-8">
+                <h4 className="text-sm font-bold text-gray-900 mb-2 uppercase tracking-wide flex items-center gap-2">
+                  <History className="w-4 h-4" />
+                  Lasting Legacy
+                </h4>
+                <p className="text-gray-700 italic text-lg">
+                  "{selectedLeader.legacy}"
+                </p>
+              </div>
+            )}
+
+            {/* Contact (for current leaders) */}
+            {selectedLeader.status === 'current' && (
+              <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-200">
+                <a 
+                  href={`mailto:${selectedLeader.email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  Send Email
+                </a>
+                <a 
+                  href="tel:+233552735903"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call Office
+                </a>
+              </div>
+            )}
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }
