@@ -54,7 +54,7 @@ export const currentLeadership = [
     name: 'Elijah Emmanuel Hienwo',
     position: 'Head of Typing and Coding',
     tenure: '2021 - Present',
-    image: '/images/leadership/current/special-programs.jpg',
+    image: '/images/leadership/current/ElijahHienwo.jpg',
     bio: 'Leads Coding, and Typing, bringing innovation to our curriculum.',
     achievements: [
       'Facilitates and guide learners to be quick in typing',
