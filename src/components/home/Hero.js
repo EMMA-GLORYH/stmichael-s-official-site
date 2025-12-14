@@ -114,27 +114,27 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Achievement Cards */}
-              <div className="absolute -bottom-6 -left-6 bg-white text-primary-900 rounded-xl shadow-2xl p-5 hover:scale-105 transition-transform border-4 border-primary-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary-600" />
+              {/* Floating Achievement Cards - SMALLER VERSION */}
+              <div className="absolute -bottom-4 -left-4 bg-white text-primary-900 rounded-lg shadow-xl p-3 hover:scale-105 transition-transform border-2 border-primary-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Award className="w-4 h-4 text-primary-600" />
                   </div>
                   <div>
-                    <div className="text-3xl font-bold">15+</div>
-                    <div className="text-sm text-gray-600">Years Experience</div>
+                    <div className="text-xl font-bold">15+</div>
+                    <div className="text-xs text-gray-600">Years Experience</div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -top-6 -right-6 bg-yellow-400 text-primary-900 rounded-xl shadow-2xl p-5 hover:scale-105 transition-transform border-4 border-yellow-200">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-yellow-200 rounded-lg flex items-center justify-center">
-                    <Users className="w-6 h-6 text-yellow-700" />
+              <div className="absolute -top-4 -right-4 bg-yellow-400 text-primary-900 rounded-lg shadow-xl p-3 hover:scale-105 transition-transform border-2 border-yellow-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-yellow-200 rounded-lg flex items-center justify-center">
+                    <Users className="w-4 h-4 text-yellow-700" />
                   </div>
                   <div>
-                    <div className="text-3xl font-bold">500+</div>
-                    <div className="text-sm text-yellow-800">Happy Students</div>
+                    <div className="text-xl font-bold">500+</div>
+                    <div className="text-xs text-yellow-800">Happy Students</div>
                   </div>
                 </div>
               </div>
