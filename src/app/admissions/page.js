@@ -15,6 +15,14 @@ import {
 import {
   FileText,
   Phone,
+  ClipboardCheck,
+  Download,
+  MapPin,
+  Clock,
+  ArrowRight,
+  AlertCircle,
+  DollarSign,
+  HelpCircle,
   Search,
   Users,
   CheckCircle,
@@ -36,17 +44,19 @@ export const metadata = {
   description: 'Apply for admission to St. Michael\'s School. Learn about requirements, fees, and our application process.',
 };
 
+// Icon mapping object
 const iconMap = {
-  phone: Phone,
-  file: FileText,
-  clipboard: ClipboardCheck,
-  check: CheckCircle,
-  users: Users,
-  calendar: Calendar,
-  download: Download,
-  clock: Clock,
-  mail: Mail,
-  map: MapPin
+  FileText: FileText,
+  Search: Search,
+  Users: Users,
+  CheckCircle: CheckCircle,
+  Calendar: Calendar,
+  Mail: Mail,
+  UserCheck: UserCheck,
+  GraduationCap: GraduationCap,
+  Building: Building,
+  Smartphone: Smartphone,
+  Wallet: Wallet
 };
 
 

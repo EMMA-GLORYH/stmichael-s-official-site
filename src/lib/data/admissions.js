@@ -2,60 +2,39 @@
 
 export const admissionProcess = [
   {
-    id: 1,
-    step: 'Step 1',
+    step: 1,
     title: 'Submit Application',
-    description: 'Complete and submit the online application form or visit our office to pick up a physical form.',
-    icon: FileText,
-    duration: '1-2 days',
-    details: [
-      'Fill out the application form completely',
-      'Provide accurate contact information',
-      'Submit required documents',
-      'Pay application fee (if applicable)'
-    ]
+    description: 'Complete our online application form with required information',
+    icon: 'file',
+    duration: '15 mins'
   },
   {
-    id: 2,
-    step: 'Step 2',
+    step: 2,
     title: 'Document Review',
-    description: 'Our admissions team reviews your application and supporting documents for completeness.',
-    icon: Search,
-    duration: '3-5 days',
-    details: [
-      'Verification of submitted documents',
-      'Academic records assessment',
-      'Background check completion',
-      'Initial eligibility determination'
-    ]
+    description: 'Submit all required documents for verification',
+    icon: 'clipboard',
+    duration: '2-3 days'
   },
   {
-    id: 3,
-    step: 'Step 3',
-    title: 'Assessment & Interview',
-    description: 'Student assessment and parent-teacher interview to understand learning needs and expectations.',
-    icon: Users,
-    duration: '1 day',
-    details: [
-      'Student academic assessment',
-      'Parent-teacher interview',
-      'School tour and facility visit',
-      'Q&A session with administrators'
-    ]
+    step: 3,
+    title: 'Assessment',
+    description: 'Student takes age-appropriate assessment test',
+    icon: 'check',
+    duration: '1-2 hours'
   },
   {
-    id: 4,
-    step: 'Step 4',
+    step: 4,
+    title: 'Interview',
+    description: 'Meet with admissions team and tour the school',
+    icon: 'users',
+    duration: '30 mins'
+  },
+  {
+    step: 5,
     title: 'Admission Decision',
-    description: 'Receive admission decision and complete enrollment process if accepted.',
-    icon: CheckCircle,
-    duration: '2-3 days',
-    details: [
-      'Admission decision notification',
-      'Acceptance letter issuance',
-      'Enrollment form completion',
-      'Fee payment and finalization'
-    ]
+    description: 'Receive admission decision and enrollment details',
+    icon: 'phone',
+    duration: '3-5 days'
   }
 ];
 
